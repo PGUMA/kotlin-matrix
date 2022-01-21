@@ -5,8 +5,8 @@ infix fun <A, B, C> Pair<A, B>.then(that: C): Triple<A, B, C> = Triple(this.firs
 fun <R, C, V> matrixOf(vararg data: Triple<R, C, V>): Matrix<R, C, V> = ImmutableMatrix(*data)
 
 private class MatrixCell<R, C, out V>(
-    val matrix: Pair<R, C>,
-    val value: V,
+    private val matrix: Pair<R, C>,
+    private val value: V,
 ) {
     fun isMatchTo(matrix: Pair<R, C>): Boolean {
         return this.matrix == matrix
