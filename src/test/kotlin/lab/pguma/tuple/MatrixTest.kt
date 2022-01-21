@@ -1,7 +1,7 @@
+package lab.pguma.tuple
+
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import lab.pguma.tuple.matrixOf
-import lab.pguma.tuple.then
 
 class MatrixTest: StringSpec() {
     init {
@@ -19,6 +19,7 @@ class MatrixTest: StringSpec() {
                 "row_4" to "column_4" then "value_4",
             )
             matrix.get("row_3" to "column_3") shouldBe "value_3"
+            matrix.get("row_1","column_1") shouldBe "value_1"
         }
 
         "Matrixから存在しない定義の値はnullが返ること" {
